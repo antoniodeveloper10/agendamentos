@@ -20,7 +20,6 @@ class Historicos(models.Model):
         managed = True
         db_table = 'historicos'
 
-    def __str__(self):
-        return self.data
+ 
     
 
