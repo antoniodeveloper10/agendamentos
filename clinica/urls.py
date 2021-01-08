@@ -17,14 +17,20 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework_swagger.views import get_swagger_view
+
+
+
 
 
 from rest_framework import routers
 
+# aplicativos importados
 from pacientes.api.viewsets import PacientesViewSet
 from agendamentos.api.viewsets import AgendamentosViewSet
 from historicos.api.viewsets import HistoricosViewSet
 from imagens.api.viewsets import imagensHistoricosViewSet
+from medicos.api.viewsets import MedicosViewSet
 
 
 router = routers.DefaultRouter()
@@ -32,6 +38,7 @@ router = routers.DefaultRouter()
 router.register(r'pacientes',PacientesViewSet)
 router.register(r'agendamentos',AgendamentosViewSet)
 router.register(r'historicos',HistoricosViewSet)
+router.register(r'medicos',MedicosViewSet)
 router.register(r'imagens_historicos',imagensHistoricosViewSet)
 
 urlpatterns = [

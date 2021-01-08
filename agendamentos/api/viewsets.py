@@ -6,6 +6,8 @@ from agendamentos.models import Agendamentos
 from agendamentos.api.serializers import AgendamentosSerializer
 from agendamentos.api.serializers import AgendamentosDetalhesSerializer
 
+
+
 class AgendamentosViewSet(viewsets.ModelViewSet):
     """ Exibir todos Agendamentos """
     queryset = Agendamentos.objects.all().order_by('data_hora')

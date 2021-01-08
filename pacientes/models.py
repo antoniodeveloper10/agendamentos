@@ -14,6 +14,8 @@ class Pacientes(models.Model):
     class Meta:
         managed = True
         db_table = 'pacientes'
+        verbose_name = 'paciente'
+        verbose_name_plural = 'pacientes'
 
     def __str__(self):
         return self.nome

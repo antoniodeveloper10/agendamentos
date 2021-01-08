@@ -8,7 +8,8 @@ class AgendamentosSerializer(serializers.ModelSerializer):
         fields = '__all__'
 class AgendamentosDetalhesSerializer(serializers.ModelSerializer):
     historicos = HistoricosDetalhesSerializer(many=True, read_only=True)
-
+    nome_paciente = serializers.ReadOnlyField(source='id_paciente.nome')
+    nome_medico = serializers.ReadOnlyField(source='id_medico.nome')
     class Meta:
         model = Agendamentos
         fields = [
@@ -18,6 +19,8 @@ class AgendamentosDetalhesSerializer(serializers.ModelSerializer):
             'cancelado',
             'obs' ,
             'tipo',
+            'nome_medico',
+            'nome_paciente',
             'historicos'
         ]
    

@@ -19,6 +19,8 @@ class Historicos(models.Model):
     class Meta:
         managed = True
         db_table = 'historicos'
+        verbose_name = 'historico'
+        verbose_name_plural = 'historicos'
 
  
     
